@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
-import star from '../assets/Star-1.png';
-import usaFlag from '../assets/US.png';
 import amex from '../assets/amex.png';
 import applePay from '../assets/apple_pay.png';
 import googlePay from '../assets/gpay.png';
-import insta from '../assets/insta.png';
+import insta from '../assets/Insta.png';
 import linkedin from '../assets/linkdein.png';
 import mastercard from '../assets/master_card.png';
 import shopPay from '../assets/opay.png';
 import paypal from '../assets/paypal.png';
+import star from '../assets/Star-1.png';
+import usaFlag from '../assets/US.png';
 
 function Footer() {
     const [openSections, setOpenSections] = useState({});
