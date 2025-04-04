@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaHeart, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa";
 import element from '../assets/element-4.png';
-import logo from '../assets/logo.png';
+import logo from '../assets/Logo.png';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
