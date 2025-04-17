@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CiHeart } from "react-icons/ci";
+import { FaHeart } from 'react-icons/fa';
 import { HiMiniChevronLeft } from "react-icons/hi2";
 import { IoChevronDown } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import Font from '../assets/Front-Pic.png';
 import image from '../assets/Image.png';
 import Rectangle1 from '../assets/Rectangle-29438.png';
@@ -15,6 +16,7 @@ import Rectangle8 from '../assets/Rectangle-29445.png';
 import Rectangle9 from '../assets/Rectangle-29446.png';
 import Rectangle10 from '../assets/Rectangle-29447.png';
 import FilterSidebar from './FilterSidebar';
+
 
 const products = [
   { id: 1, name: "Ppxoc Milkyway Dress", image: Font, isNew: true, outOfStock: false },
@@ -36,6 +38,7 @@ function MainPage() {
   const [likedProducts, setLikedProducts] = useState({});
   const [showSortPopup, setShowSortPopup] = useState(false);
   const sortRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -101,7 +104,7 @@ function MainPage() {
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg border rounded-md p-2 z-50">
                 {["RECOMMENDED", "NEWEST FIRST", "POPULAR", "PRICE: HIGH TO LOW", "PRICE: LOW TO HIGH"]
                   .map((option, index) => (
-                    <button key={index} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+                    <button size={15} key={index} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
                       {option}
                     </button>
                   ))}
@@ -133,11 +136,19 @@ function MainPage() {
                 <img src={product.image} alt={product.name} className="w-full" />
                 <h4 className="font-semibold mt-2">{product.name}</h4>
                 <div className='flex justify-between items-center'>
-                  <p className="text-sm text-gray-500">
+                  {/* <p className="text-sm text-gray-500">
                     <a href="#" className="underline">Sign in</a> or Create an account to see pricing
+                  </p> */}
+                  <p className='hover:text-blue-600 underline cursor-pointer text-sm' onClick={() => navigate("/auth")}>
+                    Sign in
+                  </p>
+                  <p className='text-sm'>or</p>
+                  <p className='hover:text-blue-600 underline cursor-pointer text-sm' onClick={() => navigate("/auth")}>
+                     Create an account to see pricing
                   </p>
                   <button onClick={() => toggleLike(product.id)}>
-                    <CiHeart size={25} color={likedProducts[product.id] ? "red" : "black"} />
+                    <FaHeart size={15} color={likedProducts[product.id] ? "red" : "black"} />
+                    {/* <FaHeart className="cursor-pointer hover:text-red-500"/> */}
                   </button>
                 </div>
               </div>

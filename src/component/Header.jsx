@@ -40,7 +40,7 @@ function Header() {
                 </div>
 
             
-                <h1 className='font-bold text-4xl md:text-4xl flex-1 text-center'>LOGO</h1>
+                <h1 className='font-bold text-4xl md:text-4xl flex-1 text-center items-center justify-center md:ml-32'>LOGO</h1>
 
                
                 <div className='hidden md:flex items-center space-x-5 text-xl'>
